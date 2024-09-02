@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop File Upload</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #333;
+            text-align: center;
+        }
+        .upload-container {
+            border: 2px dashed #00ff99;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .upload-container.dragover {
+            border-color: #00cc66;
+            background-color: #e6ffe6;
+        }
+        .upload-container p {
+            font-size: 1.2em;
+            margin: 0;
+            color: #00ff99;
+        }
+        .upload-container input[type="file"] {
+            display: none;
+        }
+        .file-info {
+            margin-top: 20px;
+        }
+        .file-info p {
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container" id="upload-container">
+        <p>Drag and drop a file here or click to select a file</p>
+        <input type="file" id="file-input">
+        <div class="file-info" id="file-info"></div>
+    </div>
+
+    <script>
+        const uploadContainer = document.getElementById('upload-container');
+        const fileInput = document.getElementById('file-input');
+        const fileInfo = document.getElementById('file-info');
+
+        // Handle drag over
+        uploadContainer.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadContainer.classList.add('dragover');
+        });
+
+        // Handle drag leave
+        uploadContainer.addEventListener('dragleave', () => {
+            uploadContainer.classList.remove('dragover');
+        });
+
+        // Handle drop
+        uploadContainer.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadContainer.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+
+        // Handle file selection via click
+        uploadContainer.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Handle file selection via file input
+        fileInput.addEventListener('change', () => {
+            handleFiles(fileInput.files);
+        });
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                fileInfo.innerHTML = `<p>File Name: ${file.name}</p>
+                                      <p>File Size: ${file.size} bytes</p>
+                                      <p>File Type: ${file.type}</p>`;
+                // Add more processing as needed, e.g., uploading the file
+            } else {
+                fileInfo.innerHTML = '<p>No file selected.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
