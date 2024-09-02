@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REX - Streamline Your Expenses</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #2c3e50; /* Dark background for a high-tech feel */
+            color: #ecf0f1; /* Light text color for contrast */
+            text-align: center;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            color: #00ff99; /* Green color for the main title */
+            text-shadow: 2px 2px 5px #2c3e50;
+        }
+        h2 {
+            font-size: 2em;
+            color: #bdc3c7; /* Gray color for the subtitle */
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px #2c3e50;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background-color: #00ff99;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #00cc66;
+            transform: scale(1.05);
+        }
+        .button:active {
+            background-color: #00994d;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>REX</h1>
+        <h2>Streamline Your Expenses</h2>
+        <a  href="expenses.html" class="button">Monthly Expenses</a>
+    </div>
+</body>
+</html>
+<title>Monthly Expenses</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #2c3e50; /* Dark background for a high-tech feel */
+            color: #ecf0f1; /* Light text color for contrast */
+            text-align: center;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            color: #00ff99; /* Green color for the main title */
+            text-shadow: 2px 2px 5px #2c3e50;
+        }
+        h2 {
+            font-size: 2em;
+            color: #bdc3c7; /* Gray color for the subtitle */
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px #2c3e50;
+    
